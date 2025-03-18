@@ -761,7 +761,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 808180196284783119}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: buttonFunctions, Assembly-CSharp
         m_MethodName: Restart
         m_Mode: 1
@@ -894,7 +894,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 808180196284783119}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: buttonFunctions, Assembly-CSharp
         m_MethodName: Restart
         m_Mode: 1
@@ -1379,7 +1379,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 808180196284783119}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: buttonFunctions, Assembly-CSharp
         m_MethodName: Quit
         m_Mode: 1
@@ -1864,7 +1864,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 808180196284783119}
+      - m_Target: {fileID: 8304269539557835774}
         m_TargetAssemblyTypeName: buttonFunctions, Assembly-CSharp
         m_MethodName: Resume
         m_Mode: 1
@@ -2133,7 +2133,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 808180196284783119}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: buttonFunctions, Assembly-CSharp
         m_MethodName: Quit
         m_Mode: 1
@@ -2271,12 +2271,19 @@ MonoBehaviour:
   menuLose: {fileID: 2153129207764623310}
   menuHUD: {fileID: 9017341145691260038}
   waveNumberText: {fileID: 2311423270244977052}
-  WaveTimer: {fileID: 1890783605374737878}
   playerHPBar: {fileID: 1203130184341276872}
-  enemyHPBar: {fileID: 0}
   playerDamageScreen: {fileID: 8075541974285806696}
   player: {fileID: 0}
   playerScript: {fileID: 0}
+  enemy: {fileID: 0}
+  enemyHP: {fileID: 0}
+  enemies: []
+  enemiesHP: []
+  enemyHPBar: {fileID: 0}
+  waypoint: {fileID: 0}
+  waypoints: []
+  enemywaypoints: []
+  WaveTimer: {fileID: 1890783605374737878}
   isPaused: 0
 --- !u!1 &7473970647603094337
 GameObject:
@@ -2772,7 +2779,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2518385820416111594}
-  - component: {fileID: 808180196284783119}
+  - component: {fileID: 8304269539557835774}
   m_Layer: 5
   m_Name: Button Functions
   m_TagString: Untagged
@@ -2799,7 +2806,7 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &808180196284783119
+--- !u!114 &8304269539557835774
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2932,7 +2939,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 808180196284783119}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: buttonFunctions, Assembly-CSharp
         m_MethodName: Restart
         m_Mode: 1
@@ -3140,7 +3147,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 808180196284783119}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: buttonFunctions, Assembly-CSharp
         m_MethodName: Quit
         m_Mode: 1

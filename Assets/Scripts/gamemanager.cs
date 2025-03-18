@@ -13,6 +13,7 @@ public class gamemanager : MonoBehaviour
     [SerializeField] GameObject menuHUD;
     [SerializeField] TMP_Text waveNumberText;
     // Player stuff
+    public Image playerHeartBeat;
     public Image playerHPBar;
     public GameObject playerDamageScreen;
     public GameObject player;
@@ -29,6 +30,7 @@ public class gamemanager : MonoBehaviour
     public GameObject[] enemywaypoints;
     //Wave stuff
     int numEnemies;
+    int goalCountOrig;
     int goalCount;
     int waveNum = 0;
     public Image WaveTimer;
@@ -128,9 +130,9 @@ public class gamemanager : MonoBehaviour
         Time.timeScale = 0;
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
-        //menuActive = menuPause;
-        //menuHUD.SetActive(false);
-        //menuActive.SetActive(true);
+        menuActive = menuPause;
+        menuHUD.SetActive(false);
+        menuActive.SetActive(true);
     }
 
     public void StateUnpause()
@@ -149,12 +151,16 @@ public class gamemanager : MonoBehaviour
     {
         goalCount += amount;
 
+        UpdateWaveBar();
+
         if (goalCount <= 0)
         {
             if (waveNum > 4)
             {
                 // You Win
                 statePause();
+                menuActive.SetActive(false);
+                menuActive = null;
                 menuActive = menuWin;
                 menuActive.SetActive(true);
             }
@@ -169,6 +175,8 @@ public class gamemanager : MonoBehaviour
     public void youLose()
     {
         statePause();
+        menuActive.SetActive(false);
+        menuActive = null;
         playerDamageScreen.SetActive(false);
         menuActive = menuLose;
         menuActive.SetActive(true);
@@ -178,6 +186,7 @@ public class gamemanager : MonoBehaviour
     {
         waveNum++;
         waveNumberText.text = "Wave " + waveNum.ToString();
+
     }
     public void updateEnemyHPBar(float enemyHP, float currentenemyHP)
     {
@@ -185,5 +194,10 @@ public class gamemanager : MonoBehaviour
         {
             enemyHPBar.fillAmount = currentenemyHP / enemyHP;
         }
+    }
+
+    public void UpdateWaveBar()
+    {
+        gamemanager.instance.playerHPBar.fillAmount = (float)goalCount / goalCountOrig;
     }
 }
